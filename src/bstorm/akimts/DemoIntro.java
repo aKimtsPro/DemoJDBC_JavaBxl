@@ -4,7 +4,7 @@ import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
 
-public class Main {
+public class DemoIntro {
 
     public static void main(String[] args) {
         // Class.forName( "com.mysql.cj.jdbc.Driver" );
