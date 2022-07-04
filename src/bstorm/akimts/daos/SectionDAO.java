@@ -65,4 +65,45 @@ public class SectionDAO {
 
     }
 
+
+    public void insert( Section toInsert ){
+
+        if( toInsert == null )
+            throw new IllegalArgumentException();
+
+        String query = "INSERT INTO section (section_id, section_name, delegate_id)"
+                + " VALUES (?,?,?)";
+
+        try (
+                Connection co = ConnectionFactory.createConnection();
+                PreparedStatement stmt = co.prepareStatement(query);
+        ) {
+
+            stmt.setInt( 1, toInsert.getId() );
+            stmt.setString( 2, toInsert.getName() );
+            if( toInsert.getDelegateId() != null )
+                stmt.setInt(3, toInsert.getDelegateId());
+            else
+                stmt.setNull(3, Types.INTEGER);
+
+            if( stmt.executeUpdate() != 1 )
+                throw new RuntimeException("insertion failed");
+        }
+        catch (SQLException ex) {
+            throw new RuntimeException("insertion failed");
+        }
+    }
+
+
+    // supprimer une section
+    public void delete(int id){
+        // TODO implementer
+    }
+
+    // Peut modifier le nom et le délégué d'une section
+    public void update(Section section){
+        // TODO implementer
+    }
+
+
 }

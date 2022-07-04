@@ -19,6 +19,14 @@ public class Program {
         Section section = dao.getOne( 1320 );
         System.out.println( section );
 
+
+        System.out.println(" > Insert");
+        section.setId(8888);
+        section.setDelegateId(12);
+
+        dao.insert(section);
+
+
     }
 
 }

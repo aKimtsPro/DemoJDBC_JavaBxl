@@ -12,11 +12,11 @@ public class Section {
         this.delegateId = delegateId;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -28,11 +28,11 @@ public class Section {
         this.name = name;
     }
 
-    public int getDelegateId() {
+    public Integer getDelegateId() {
         return delegateId;
     }
 
-    public void setDelegateId(int delegateId) {
+    public void setDelegateId(Integer delegateId) {
         this.delegateId = delegateId;
     }
 
